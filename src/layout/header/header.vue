@@ -1,0 +1,55 @@
+<template>
+  <div class="header">
+    <div class="title">
+      <div class="userImg"></div>
+      <span class="titleText">图片库</span>
+    </div>
+    <div class="user">
+      <i class="el-icon-sunny headerIcon"></i>
+      <span class="GB">2022-09-12 </span>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+.title {
+  align-items: center;
+}
+.titleText{
+    font-size: .2533rem;
+    font-weight: bold;
+}
+.header {
+  font-size: 0.2133rem;
+  background: rgb(233, 221, 221);
+  color: rgb(29, 23, 23);
+  line-height: 0.5333rem;
+  justify-content: space-between;
+}
+.gb {
+  font-size: 0.1333rem;
+}
+.header,
+.user ,
+.title{
+  display: flex;
+}
+.userImg {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: black;
+}
+.user {
+  align-items: center;
+}
+.headerIcon,
+.gb,
+.userImg {
+  margin-right: 0.1333rem;
+}
+</style>
