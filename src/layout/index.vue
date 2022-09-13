@@ -8,7 +8,7 @@
   <!--   头部结束 -->
       <el-container>
   <!--   侧边栏  -->
-        <el-aside width="200px">
+        <el-aside >
   <!--   侧边栏内容-->
           <VueAside />
         </el-aside>
@@ -48,4 +48,8 @@ export default {
     padding: 0;
     height: .6667rem !important;
 }
+.el-aside{
+  width: 1.3333rem !important;
+}
+
 </style>

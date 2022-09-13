@@ -1,6 +1,6 @@
 <template>
     <div>
-      <router-view></router-view>
+      电脑壁纸页
     </div>
   </template>
   

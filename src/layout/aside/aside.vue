@@ -17,7 +17,7 @@
             </el-menu-item-group>
           </el-submenu>
 
-      <el-menu-item :index="i.path" :key="i" v-else>
+      <el-menu-item :index="i.path" :key="index" v-else>
           <i :class="i.icon"></i>
           <span>{{i.title}}</span>
       </el-menu-item>
@@ -35,26 +35,41 @@ data(){
     return{
         navlist:[
             {path:'/',icon:'el-icon-plus',title:'首页'},
-            {path:'/about',icon:'el-icon-plus',title:'关于页面'}
+            {path:'/emoji',icon:'el-icon-plus',title:'表情包'}
         ]
     }
 },
 mounted() {
-    this.getDom()
+    this.autoDom()
     window.onresize = () =>{
       this.autoDom()
     }
   },
   methods:{
-    getDom(){
+    autoDom(){
       let dom = document.querySelector('.aside')
       let autoDom = document.documentElement.clientHeight
-      let header = document.querySelector('.header')
-      
-      dom.style.height = autoDom - header  + 'px'
-      console.log(dom.style.height);
+      // let header = document.querySelector('.header')
+      dom.style.height = (autoDom - 130) + 'px'
+      console.log(dom.style.height)
     }
   }
+// mounted() {
+//     this.getDom()
+//     window.onresize = () =>{
+//       this.autoDom()
+//     }
+//   },
+//   methods:{
+//     getDom(){
+//       let dom = document.querySelector('.aside')
+//       let autoDom = document.documentElement.clientHeight
+//       let header = document.querySelector('.header')
+      
+//       dom.style.height = (autoDom - header)  + 'px'
+//       console.log(dom.style.height);
+//     }
+//   }
 }
 </script>
 
