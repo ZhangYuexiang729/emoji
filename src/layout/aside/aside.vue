@@ -17,7 +17,7 @@
             </el-menu-item-group>
           </el-submenu>
 
-      <el-menu-item :index="i.path" :key="index" v-else>
+      <el-menu-item :index="i.path" :key="i.index" v-else>
           <i :class="i.icon"></i>
           <span>{{i.title}}</span>
       </el-menu-item>
@@ -49,27 +49,12 @@ mounted() {
     autoDom(){
       let dom = document.querySelector('.aside')
       let autoDom = document.documentElement.clientHeight
-      // let header = document.querySelector('.header')
-      dom.style.height = (autoDom - 130) + 'px'
-      console.log(dom.style.height)
+      let header = document.querySelector('.header')
+      dom.style.height = (autoDom -10) + 'px'
+      console.log(header.style.height)
     }
   }
-// mounted() {
-//     this.getDom()
-//     window.onresize = () =>{
-//       this.autoDom()
-//     }
-//   },
-//   methods:{
-//     getDom(){
-//       let dom = document.querySelector('.aside')
-//       let autoDom = document.documentElement.clientHeight
-//       let header = document.querySelector('.header')
-      
-//       dom.style.height = (autoDom - header)  + 'px'
-//       console.log(dom.style.height);
-//     }
-//   }
+
 }
 </script>
 

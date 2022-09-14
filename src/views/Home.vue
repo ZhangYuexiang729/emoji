@@ -16,3 +16,9 @@ export default {
   }
 }
 </script>
+<style>
+  /* *{
+    font-size: .2667rem;
+    
+  } */
+</style>

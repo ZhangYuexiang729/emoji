@@ -24,10 +24,10 @@ export default {};
     font-weight: bold;
 }
 .header {
-  font-size: 0.2133rem;
+  font-size: 0.1133rem;
   background: rgb(233, 221, 221);
   color: rgb(29, 23, 23);
-  line-height: 0.5333rem;
+  line-height: 30px;
   justify-content: space-between;
 }
 .gb {

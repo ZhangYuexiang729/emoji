@@ -46,7 +46,8 @@ export default {
 .el-header{
     margin: 0;
     padding: 0;
-    height: .6667rem !important;
+    min-height: .6rem !important;
+    max-height: .6rem !important;
 }
 .el-aside{
   width: 1.3333rem !important;
