@@ -6,6 +6,9 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import flexible from './assets/js/flexible'
 
+import Pagination from "@/components/Pagination";
+Vue.component('Pagination', Pagination)
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(flexible)

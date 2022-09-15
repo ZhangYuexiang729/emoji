@@ -1,12 +1,14 @@
 <template>
   <div class="header">
     <div class="title">
-      <div class="userImg"></div>
+      <div class="userImg">
+        
+      </div>
       <span class="titleText">图片库</span>
     </div>
     <div class="user">
       <i class="el-icon-sunny headerIcon"></i>
-      <span class="GB">2022-09-12 </span>
+      <span class="GB">2022-09-15 </span>
     </div>
   </div>
 </template>
@@ -25,8 +27,8 @@ export default {};
 }
 .header {
   font-size: 0.1133rem;
-  background: rgb(233, 221, 221);
-  color: rgb(29, 23, 23);
+  background: rgb(221, 233, 231);
+  color: rgb(92, 92, 88);
   line-height: 30px;
   justify-content: space-between;
 }
@@ -43,6 +45,11 @@ export default {};
   height: 0.4rem;
   border-radius: 50%;
   background: black;
+  background-image: url('../../assets/logo.png');
+  background-size: contain;
+}
+.userImg img{
+  width: 0.4rem;
 }
 .user {
   align-items: center;

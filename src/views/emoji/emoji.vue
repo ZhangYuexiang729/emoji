@@ -1,7 +1,19 @@
 <template>
   <div>
-    表情包页123
-    <button @click="getList">点击</button>
+    <div class="content" v-for="(item,index) in serviceList" :key="index">
+      <h2>
+        {{item.name}}
+      </h2>
+      <div class="imgBox">
+        <el-image
+        v-for="(img,index) in item.list"
+        :key="index"
+        style="width: 100px; height: 100px"
+        :src="img.emojiDetail"
+        fit="contain"></el-image>
+      </div>
+    </div>
+    <pagination :total="total" :page.sync="pageNumb" :limit.sync="pageSize" @pagination="getList" />
   </div>
 </template>
 
@@ -9,19 +21,38 @@
   import {
  
   getServicePackage,
+  getCount
   
 } from "@/api/emojiPic";
+
 export default {
+
 data(){
   return{
     serviceList:[],
-    tableData:[]
+    tableData:[],
+    pageNumb: 1,
+		pageSize: 3,
+		total: 0,
   }
 },
+created(){
+  this.getList()
+  this.getImgCount()
+},
 methods:{
+  getImgCount(){
+    getCount().then(res=>{
+      this.total = res
+      console.log(res);
+    })
+  },
   getList() {
+
       let self = this;
-      getServicePackage(0)
+      let limit = self.pageSize
+      let skip = (self.pageNumb - 1) * self.pageSize
+      getServicePackage(skip,limit)
         .then((res) => {
           console.log(res);
           this.serviceList = res;
@@ -31,27 +62,20 @@ methods:{
         })
         .catch((err) => {
           self.$notify.error(
-            "获取服务包列表失败：" + err.response.data.error.message
+            "获取图片列表失败：" + err.response.data.error.message
           );
         });
     },
-    getDeatils() {
-      let self = this;
-      getServicePackage(self.parentId)
-        .then((res) => {
-          
-          self.tableData = res;
-        })
-        .catch((err) => {
-          self.$notify.error(
-            "获取服务包详情失败：" + err.response.data.error.message
-          );
-        });
-    },
+
 }
 }
 </script>
 
 <style>
-
+.content{
+  margin-bottom: .2667rem !important;
+}
+.el-image{
+  margin: .04rem !important;
+}
 </style>
